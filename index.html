@@ -29,7 +29,15 @@
         <p> Multimodal EmotionLines Dataset (MELD) has been created by enhancing and extending EmotionLines dataset. MELD contains the same dialogue instances available in EmotionLines, but it also encompasses audio and visual modality along with text. MELD contains more than 1300 dialogues and 13000 utterances from Friends TV series. Multiple speakers participated in the dialogues. Each utterance in a dialogue has been labeled by any of these seven emotions -- {Anger, Disgust, Sadness, Joy, Neutral, Surprise and Fear}. MELD also has sentiment (positive, negative and neutral) annotation for each utterance.<p>
         <br>
         <h2>Example dialogue</h2>
-        <img src="emotion_shift.jpeg" alt="Example">
+       <!-- <img src="emotion_shift.jpeg" alt="Example">-->
+        <img id="myImg" src="emotion_shift.jpeg" alt="Example" style="width:100%;max-width:500px">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
         <br>
         <br>
         <h2>Dataset statistics</h2>
@@ -49,6 +57,28 @@
       <footer>
       </footer>
     </div>
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
     <script src="javascripts/scale.fix.js"></script>
   </body>
 </html>
